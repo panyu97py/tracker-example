@@ -7,5 +7,6 @@ module.exports = {
       ts: true,
       compiler: 'webpack5',
     }]
-  ]
+  ],
+  plugins: ["@trackerjs/babel-preset-tracker-applet"]
 }

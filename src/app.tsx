@@ -1,5 +1,10 @@
 import { Component, PropsWithChildren } from 'react'
 import { Provider } from 'mobx-react'
+import {Tracker,presetApplet} from '@trackerjs/applet'
+
+Tracker.init({
+  presets:[presetApplet()],
+})
 
 import counterStore from './store/counter'
 
