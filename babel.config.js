@@ -6,7 +6,7 @@ module.exports = {
       framework: 'react',
       ts: true,
       compiler: 'webpack5',
-    }]
+    }],
+    '@trackerjs/babel-preset-tracker-applet'
   ],
-  plugins: ["@trackerjs/babel-preset-tracker-applet"]
 }
