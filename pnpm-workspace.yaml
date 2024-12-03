@@ -1,3 +1,5 @@
 packages:
   - 'tracker-client-applet'
+  - 'tracker-manage-server'
   - 'tracker-manage-web'
+
