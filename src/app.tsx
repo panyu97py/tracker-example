@@ -1,6 +1,7 @@
 import { Component, PropsWithChildren } from 'react'
 import { Provider } from 'mobx-react'
 import {Tracker,presetApplet} from '@trackerjs/applet'
+import '@/assets/style/font-oppo-sans/index.less'
 
 Tracker.init({
   presets:[presetApplet({url:'http://localhost:8080',method:'POST'})],
