@@ -25,3 +25,11 @@ declare namespace NodeJS {
     TARO_APP_ID: string
   }
 }
+
+import {EventConfig} from "@trackerjs/core";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicAttributes extends EventConfig {}
+  }
+}

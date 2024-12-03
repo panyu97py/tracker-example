@@ -49,7 +49,6 @@ class Index extends Component<PropsWithChildren> {
     const { counterStore: { counter } } = this.props.store
     return (
       <View className='index'>
-        {/* @ts-ignore */}
         <Button onClick={this.increment} eventClickName="test">+</Button>
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Add Async</Button>
