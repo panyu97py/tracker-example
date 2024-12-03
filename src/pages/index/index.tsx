@@ -23,7 +23,13 @@ const IndexPage = () => {
   return (
     <View className='index-page-view'>
       {productList.map(item => (
-        <ProductItem key={item.id} productInfo={item} eventClickName="productClick" extendData={item} onClick={handleProductItemClick}/>
+        <ProductItem
+          key={item.id}
+          productInfo={item}
+          onClick={handleProductItemClick}
+          eventClickName="productClick"
+          extendData={item}
+        />
       ))}
     </View>
   )
