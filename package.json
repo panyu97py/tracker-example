@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev:applet": "pnpm --filter tracker-client-applet dev:weapp"
+    "dev:applet": "pnpm --filter 'tracker-client-applet' dev:weapp"
   },
   "repository": {
     "type": "git",

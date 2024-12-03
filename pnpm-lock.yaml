@@ -67,6 +67,9 @@ importers:
       '@trackerjs/core':
         specifier: 0.0.1-alpha.10
         version: 0.0.1-alpha.10
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
       mobx:
         specifier: ^4.8.0
         version: 4.15.7
