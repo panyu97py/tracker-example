@@ -1,0 +1,23 @@
+{
+  "name": "tracker-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": ""
+  },
+  "workspaces": [
+    "./*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panyu97py/tracker-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/panyu97py/tracker-example/issues"
+  },
+  "homepage": "https://github.com/panyu97py/tracker-example#readme"
+}
