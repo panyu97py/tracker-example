@@ -8,7 +8,7 @@ importers:
 
   .: {}
 
-  client-applet:
+  tracker-client-applet:
     dependencies:
       '@babel/runtime':
         specifier: ^7.21.5
@@ -11070,7 +11070,7 @@ snapshots:
   path-scurry@1.11.1:
     dependencies:
       lru-cache: 10.4.3
-      minipass: 6.0.2
+      minipass: 7.1.2
 
   path-to-regexp@0.1.10: {}
 

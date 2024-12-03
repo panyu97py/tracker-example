@@ -5,11 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": ""
+    "dev:applet": "pnpm --filter tracker-client-applet dev:weapp"
   },
-  "workspaces": [
-    "./*"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/panyu97py/tracker-example.git"
