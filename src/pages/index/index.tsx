@@ -28,6 +28,7 @@ const IndexPage = () => {
           productInfo={item}
           onClick={handleProductItemClick}
           eventClickName="productClick"
+          eventExposureName="productExposure"
           extendData={item}
         />
       ))}
