@@ -3,7 +3,7 @@ import { Provider } from 'mobx-react'
 import {Tracker,presetApplet} from '@trackerjs/applet'
 
 Tracker.init({
-  presets:[presetApplet()],
+  presets:[presetApplet({url:'http://localhost:8080',method:'POST'})],
 })
 
 import counterStore from './store/counter'

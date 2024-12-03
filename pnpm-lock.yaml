@@ -54,17 +54,17 @@ importers:
         specifier: 4.0.8
         version: 4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96))
       '@trackerjs/applet':
-        specifier: 0.0.1-alpha.9
-        version: 0.0.1-alpha.9(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)
+        specifier: 0.0.1-alpha.10
+        version: 0.0.1-alpha.10(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)
       '@trackerjs/babel-plugin-inject':
-        specifier: 0.0.1-alpha.9
-        version: 0.0.1-alpha.9(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
+        specifier: 0.0.1-alpha.10
+        version: 0.0.1-alpha.10(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
       '@trackerjs/babel-preset-tracker-applet':
-        specifier: 0.0.1-alpha.9
-        version: 0.0.1-alpha.9(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
+        specifier: 0.0.1-alpha.10
+        version: 0.0.1-alpha.10(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
       '@trackerjs/core':
-        specifier: 0.0.1-alpha.9
-        version: 0.0.1-alpha.9
+        specifier: 0.0.1-alpha.10
+        version: 0.0.1-alpha.10
       mobx:
         specifier: ^4.8.0
         version: 4.15.7
@@ -1567,28 +1567,28 @@ packages:
       stylus:
         optional: true
 
-  '@trackerjs/applet@0.0.1-alpha.9':
-    resolution: {integrity: sha512-VSpu7Z/rTzUUuRXKbGc249lSm2JERGQMK9ecMbWU6uUtPY0hm5EUYG6q1Tg6rRP8GsuVxqQp35bvi7g+951BPw==}
+  '@trackerjs/applet@0.0.1-alpha.10':
+    resolution: {integrity: sha512-DvT1CTExTH/xkcf0N48YKoBfcbz5IBOIBSvZn75q4TiwlYbflcTURuL2ndlJ3tyWXQHwo+Oybi4H4VBucvhgsA==}
     peerDependencies:
       '@tarojs/taro': ^3.6.29
       react: '*'
 
-  '@trackerjs/babel-plugin-inject@0.0.1-alpha.9':
-    resolution: {integrity: sha512-DyQgTbqPZ208AG8bCu6KgtQWyvvTUt+01GrZ41mRr/avlUaIdo3G4DZ4GhF3vrL8cQgUH5Po6K/6+uE74EnOPQ==}
+  '@trackerjs/babel-plugin-inject@0.0.1-alpha.10':
+    resolution: {integrity: sha512-6S3zg1Ugd6iAIAiqjVAVlnx+UWsA9r+hkBc+C99P/DxxaIH4bYJdPm93UUYYXJRTOuirWyTEHXo5KrPiLvRqOA==}
     peerDependencies:
       '@babel/generator': '*'
       '@babel/template': '*'
       '@babel/types': '*'
 
-  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.9':
-    resolution: {integrity: sha512-XqKTo5Pn4zJJzptDtwfY3n3fu95dyniUnLwz98cvcwh16xz+oOMnKJwlUy6VuN8sZw5VJj/jPA/Ol/Nvulbsbw==}
+  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.10':
+    resolution: {integrity: sha512-U0BQwZtZclcT+CHqk24qOf9olTgPHRSQT8sqENGxvaHAUL+/zH+Dpt1CmFeNP8IUIyfq/nFW3gbwnOV1FsZO2A==}
     peerDependencies:
       '@babel/generator': '*'
       '@babel/template': '*'
       '@babel/types': '*'
 
-  '@trackerjs/core@0.0.1-alpha.9':
-    resolution: {integrity: sha512-d+3sFcL+Oatnzj2CDyc2BMXMhrbJ10hdoKTE+8VH3WGus5idfVFFhokAvnzqgBSw3uExJF3rCZi3hTrBWQJAaA==}
+  '@trackerjs/core@0.0.1-alpha.10':
+    resolution: {integrity: sha512-bXoU2B4zjuYELG8WWYFujakKs7BnTBSxa8lEC+w+R5tHdpJ2ZELcDdTkih4BQcfMF2xE16aQm/czChWub4TBqQ==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -7686,28 +7686,28 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@trackerjs/applet@0.0.1-alpha.9(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)':
+  '@trackerjs/applet@0.0.1-alpha.10(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)':
     dependencies:
       '@tarojs/taro': 4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96))
-      '@trackerjs/core': 0.0.1-alpha.9
+      '@trackerjs/core': 0.0.1-alpha.10
       react: 18.3.1
     transitivePeerDependencies:
       - supports-color
 
-  '@trackerjs/babel-plugin-inject@0.0.1-alpha.9(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
+  '@trackerjs/babel-plugin-inject@0.0.1-alpha.10(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
     dependencies:
       '@babel/generator': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
 
-  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.9(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
+  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.10(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
     dependencies:
       '@babel/generator': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
-      '@trackerjs/babel-plugin-inject': 0.0.1-alpha.9(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
+      '@trackerjs/babel-plugin-inject': 0.0.1-alpha.10(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
 
-  '@trackerjs/core@0.0.1-alpha.9':
+  '@trackerjs/core@0.0.1-alpha.10':
     dependencies:
       debug: 4.3.7
     transitivePeerDependencies:
