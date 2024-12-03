@@ -6,6 +6,6 @@ interface ConfigDetailModalProps{
     onClose?:()=>void
 }
 export const ConfigDetailModal:React.FC<ConfigDetailModalProps> = (props)=>{
-    const {visible} = props;
-    return <Modal open={visible}/>
+  const {visible} = props;
+  return <Modal open={visible}/>
 }

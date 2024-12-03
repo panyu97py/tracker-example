@@ -6,19 +6,19 @@ interface ChartProps {
 }
 
 export const Chart: React.FC<ChartProps> = (props) => {
-    const {data} = props
+  const {data} = props
 
-    const config: LineConfig = useMemo(() => {
-        return {
-            data: data ?? [],
-            xField: 'date',
-            yField: 'data',
-            seriesField: 'name',
-            legend: {position: 'top'},
-            smooth: true,
-            animation: {appear: {animation: 'path-in', duration: 2000}},
-        };
-    }, [data]);
+  const config: LineConfig = useMemo(() => {
+    return {
+      data: data ?? [],
+      xField: 'date',
+      yField: 'data',
+      seriesField: 'name',
+      legend: {position: 'top'},
+      smooth: true,
+      animation: {appear: {animation: 'path-in', duration: 2000}},
+    };
+  }, [data]);
 
-    return <Line {...config} />
+  return <Line {...config}/>
 }
