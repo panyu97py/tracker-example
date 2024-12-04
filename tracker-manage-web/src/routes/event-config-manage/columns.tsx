@@ -10,13 +10,15 @@ export const columns: ProTableProps<any, any>['columns'] = [
     dataIndex: 'key',
     width: 200,
     key: 'key',
-    title: '点位名称(event_name)',
+    title: '点位名称',
+    tooltip:"event_name"
   },
   {
     title: '点位描述',
     width: 150,
     key: 'event_desc',
     dataIndex: 'event_desc',
+    tooltip:"event_desc"
   },
   {
     title: '今日上报指标',
@@ -43,12 +45,13 @@ export const columns: ProTableProps<any, any>['columns'] = [
     valueType: 'select',
     valueEnum: {
       CLICK: '点击（CLICK）',
-      TRACK: '曝光 (TRACK)',
+      TRACK: '曝光 (EXPOSURE)',
     },
   },
   {
     title: '操作',
     fixed: 'right',
+    search:false,
     render: (_, record, __, action) => {
       return (
         <>

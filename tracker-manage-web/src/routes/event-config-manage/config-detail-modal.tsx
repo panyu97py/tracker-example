@@ -7,5 +7,5 @@ interface ConfigDetailModalProps{
 }
 export const ConfigDetailModal:React.FC<ConfigDetailModalProps> = (props)=>{
   const {visible} = props;
-  return <Modal open={visible}/>
+  return <Modal open={visible} />
 }

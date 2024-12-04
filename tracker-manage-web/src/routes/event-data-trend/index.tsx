@@ -1,9 +1,9 @@
-import {Card, Col, Row, Statistic} from "antd";
+import { Col, Row, Statistic} from "antd";
+import { ProCard} from "@ant-design/pro-components";
 import {Chart} from "./chart";
 import React, {useEffect} from "react";
 import {service} from "../../service";
 import {useParams} from 'react-router';
-
 
 export const EventDataTrend = () => {
 
@@ -21,20 +21,19 @@ export const EventDataTrend = () => {
   }, [])
 
   return (
-    <div>
-      <Card title="今日数据">
-        <Row style={{textAlign: 'center'}}>
-          <Col span={12}>
-            <Statistic title="上报次数（PV）" value={data.pv}/>
-          </Col>
-          <Col span={12}>
-            <Statistic title="上报次数（UV）" value={data.uv}/>
-          </Col>
-        </Row>
-      </Card>
-      <Card title="上报统计">
-        <Chart data={data.trend}/>
-      </Card>
-    </div>
+    <ProCard ghost direction="column" gutter={[16, 16]}>
+      <ProCard title="今日数据" style={{textAlign: 'center'}}>
+        <ProCard ghost>
+          <Statistic title="上报次数（PV）" value={data.pv} />
+        </ProCard>
+        <ProCard ghost>
+          <Statistic title="上报次数（UV）" value={data.uv} />
+        </ProCard>
+      </ProCard>
+
+      <ProCard title="上报统计">
+        <Chart data={data.trend} />
+      </ProCard>
+    </ProCard>
   )
 }

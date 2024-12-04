@@ -20,5 +20,5 @@ export const Chart: React.FC<ChartProps> = (props) => {
     };
   }, [data]);
 
-  return <Line {...config}/>
+  return <Line {...config} />
 }
