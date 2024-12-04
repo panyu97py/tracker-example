@@ -1,16 +1,26 @@
-import React from "react";
+import React, {useImperativeHandle} from "react";
 import {ModalForm, ProFormSelect, ProFormText} from "@ant-design/pro-components";
 import {Form} from "antd";
+import {noop} from "@/utils";
 
 interface ConfigDetailModalProps {
     visible?: boolean
-    onClose?: () => void
+    value?: Record<string, any>
     onFinish?: (values: any) => Promise<void>
+    onVisibleChange?: (visible: boolean) => void
 }
 
-export const ConfigDetailModal: React.FC<ConfigDetailModalProps> = (props) => {
-  const {visible, onFinish} = props;
+export interface ConfigDetailModalHandler {
+    setFieldsValue: (values: Record<string, any>) => void;
+}
+
+export const ConfigDetailModal = React.forwardRef<ConfigDetailModalHandler, ConfigDetailModalProps>((props, ref) => {
+  const {visible, onFinish, onVisibleChange = noop} = props;
+
   const [form] = Form.useForm()
+
+  useImperativeHandle(ref, () => ({setFieldsValue: form.setFieldsValue}))
+
   return (
     <ModalForm
       title="事件详情"
@@ -19,14 +29,11 @@ export const ConfigDetailModal: React.FC<ConfigDetailModalProps> = (props) => {
       form={form}
       width={400}
       onFinish={onFinish}
+      onOpenChange={onVisibleChange}
     >
       <ProFormText hidden name="id" />
-      <ProFormText
-        name="eventName"
-        label="事件名称"
-        placeholder="请输入事件名称"
-      />
       <ProFormSelect
+        required
         name="eventType"
         label="事件类型"
         placeholder="请输入事件名称"
@@ -35,6 +42,18 @@ export const ConfigDetailModal: React.FC<ConfigDetailModalProps> = (props) => {
           {value: 'EXPOSURE', label: '曝光 (EXPOSURE)'},
         ]}
       />
+      <ProFormText
+        required
+        name="eventName"
+        label="事件名称"
+        placeholder="请输入事件名称"
+      />
+      <ProFormText
+        required
+        name="eventDese"
+        label="事件描述"
+        placeholder="请输入事件描述"
+      />
     </ModalForm>
   )
-}
+})
