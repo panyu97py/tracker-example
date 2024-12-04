@@ -14,7 +14,7 @@ enum OperateType {
 
 
 export const EventConfigManage: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+  const [configDetailModalVisible, setConfigDetailModalVisible] = useState(false);
 
   const [operateType, setOperateType] = useState<OperateType>(OperateType.EDIT);
 
@@ -24,7 +24,7 @@ export const EventConfigManage: React.FC = () => {
 
   const handleCreateEventConfig = () => {
     setOperateType(OperateType.CREATE)
-    setVisible(true)
+    setConfigDetailModalVisible(true)
   }
 
   const handleLookEventDataTrend = () => {
@@ -33,7 +33,7 @@ export const EventConfigManage: React.FC = () => {
   const handleEditEventConfig = (dataItem:any) => {
     configDetailModalRef.current?.setFieldsValue(dataItem)
     setOperateType(OperateType.CREATE)
-    setVisible(true)
+    setConfigDetailModalVisible(true)
   }
 
   const handleDeleteEventConfig = () => {
@@ -41,7 +41,7 @@ export const EventConfigManage: React.FC = () => {
 
   const handleSubmitEventConfig = async (value: any) => {
     console.log({value, operateType})
-    setVisible(false)
+    setConfigDetailModalVisible(false)
   }
 
   const fetchEventConfigByPage: ProTableProps<any, any>['request'] = async (params, sort, filter) => {
@@ -67,10 +67,10 @@ export const EventConfigManage: React.FC = () => {
           toolbar={{actions: [createEventConfigBtnVNode]}}
         />
         <ConfigDetailModal
-          visible={visible}
           ref={configDetailModalRef}
-          onVisibleChange={() => setVisible(false)}
+          visible={configDetailModalVisible}
           onFinish={handleSubmitEventConfig}
+          onVisibleChange={(visible)=>setConfigDetailModalVisible(visible)}
         />
       </ProCard>
     </EventConfigManagementCtx.Provider>
