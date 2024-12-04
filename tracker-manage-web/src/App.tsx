@@ -1,15 +1,22 @@
 import React from 'react';
 import {EventConfigManage} from "@/routes/event-config-manage";
 import {EventDataTrend} from "@/routes/event-data-trend";
-import {Layout} from "@/components";
+import {PageContainer} from "@ant-design/pro-components";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
-    <Layout>
-      <Layout.Route title="事件管理" path="/" exact component={EventConfigManage} />
-      <Layout.Route title="事件数据" path="/trend/:id" component={EventDataTrend} />
-    </Layout>
+    <div style={{background: '#F5F7FA'}}>
+      <PageContainer>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<EventConfigManage />} />
+            <Route path="/trend/:id" element={<EventDataTrend />} />
+          </Routes>
+        </BrowserRouter>
+      </PageContainer>
+    </div>
   );
 }
 

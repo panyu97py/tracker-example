@@ -1,5 +1,5 @@
 import {ProTableProps} from "@ant-design/pro-components";
-import {Button, Space} from "antd";
+import {Space} from "antd";
 import dayjs from "dayjs";
 import {generateContextLink} from "@/components";
 import {EventConfigManagementCtx} from "./context";
