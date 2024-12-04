@@ -1,6 +1,6 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useMemo, useState} from "react";
 import {PageContainer} from "@ant-design/pro-components";
-import {BrowserRouter, Route, useLocation} from "react-router-dom";
+import {BrowserRouter, Route, useLocation, matchPath} from "react-router-dom";
 import {LayoutCtx, LayoutCtxVal} from "./context";
 import {RouteConfig} from "./types";
 import {useToRef} from "@/hooks/useToRef";
@@ -18,6 +18,11 @@ const InternalLayoutContent: React.FC<InternalLayoutContentProps> = (props) => {
 
   const [routeConfigs, setRouteConfigs] = useState<RouteConfig[]>([]);
 
+  const breadcrumbs = useMemo(() => {
+    const matchRouteConfig = routeConfigs.filter(routeConfig =>  matchPath(location.pathname, routeConfig.path as string));
+    return matchRouteConfig.map(item=>({title:item.title}));
+  }, [routeConfigs, location])
+
   const registerRoute = (routeConfig: RouteConfig) => {
     setRouteConfigs(val => Array.from(new Set([...val, routeConfig])));
   }
@@ -29,7 +34,7 @@ const InternalLayoutContent: React.FC<InternalLayoutContentProps> = (props) => {
   return (
     <LayoutCtx.Provider value={ctxVal}>
       <div style={{background: '#F5F7FA'}}>
-        <PageContainer>
+        <PageContainer breadcrumb={{items: breadcrumbs}}>
           <>{children}</>
         </PageContainer>
       </div>

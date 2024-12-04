@@ -250,7 +250,7 @@ importers:
         specifier: ^2.3.2
         version: 2.3.2(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@ant-design/pro-components':
-        specifier: ^2.8.2
+        specifier: ^2.6.2
         version: 2.8.2(antd@5.22.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(rc-field-form@2.6.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@craco/craco':
         specifier: ^7.1.0

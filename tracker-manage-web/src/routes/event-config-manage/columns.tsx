@@ -52,7 +52,6 @@ export const columns: ProTableProps<any, any>['columns'] = [
 
   {
     title: '操作',
-    fixed: 'right',
     search: false,
     render: (_, record) => {
       return (
