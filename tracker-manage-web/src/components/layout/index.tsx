@@ -30,7 +30,7 @@ const InternalLayoutContent: React.FC<InternalLayoutContentProps> = (props) => {
     <LayoutCtx.Provider value={ctxVal}>
       <div style={{background: '#F5F7FA'}}>
         <PageContainer>
-          {children}
+          <>{children}</>
         </PageContainer>
       </div>
     </LayoutCtx.Provider>

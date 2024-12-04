@@ -14,7 +14,6 @@ type FunctionKeys<T> = Functions<T>[keyof T];
 export interface ContextLinkProps<T> extends ButtonProps {
   effectParams?: any;
   effectName: FunctionKeys<T>;
-  children?: React.ReactNode;
   content?: string;
 }
 
