@@ -3,16 +3,16 @@ import {ProCard} from "@ant-design/pro-components";
 import {Chart} from "./chart";
 import React, {useEffect} from "react";
 import {service} from "@/service";
-import {useParams} from 'react-router';
+// import {useParams} from 'react-router';
 
 export const EventDataTrend = () => {
 
-  const {id} = useParams();  // 获取 URL 中的 id 参数
+  // const {id} = useParams();  // 获取 URL 中的 id 参数
 
   const [data, setData] = React.useState<any>({})
 
   const fetchData = async () => {
-    const res = await service.fetchEventDataTrendData({id})
+    const res = await service.fetchEventDataTrendData({})
     setData(res)
   }
 

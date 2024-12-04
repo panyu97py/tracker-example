@@ -1,19 +1,14 @@
 import React from 'react';
 import {EventConfigManage} from "@/routes/event-config-manage";
 import {EventDataTrend} from "@/routes/event-data-trend";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {Layout} from "./components/layout";
+import {Layout} from "@/components";
 import './App.css';
 
 function App() {
   return (
     <Layout>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<EventConfigManage />} />
-          <Route path="/trend/:id" element={<EventDataTrend />} />
-        </Routes>
-      </BrowserRouter>
+      <Layout.Route title="事件管理" path="/" component={EventConfigManage} />
+      <Layout.Route title="事件数据" path="/trend/:id" component={EventDataTrend} />
     </Layout>
   );
 }
