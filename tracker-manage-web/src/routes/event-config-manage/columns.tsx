@@ -45,7 +45,7 @@ export const columns: ProTableProps<any, any>['columns'] = [
     valueType: 'select',
     valueEnum: {
       CLICK: '点击（CLICK）',
-      TRACK: '曝光 (EXPOSURE)',
+      EXPOSURE: '曝光 (EXPOSURE)',
     },
   },
   {

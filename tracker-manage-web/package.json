@@ -5,6 +5,7 @@
   "dependencies": {
     "@ant-design/plots": "^2.3.2",
     "@ant-design/pro-components": "^2.8.2",
+    "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -24,10 +25,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test"
   },
   "eslintConfig": {
     "extends": [
@@ -35,14 +35,26 @@
       "react-app/jest"
     ],
     "rules": {
-      "indent": ["error", 2],
-      "react/jsx-indent": ["error", 2],
-      "react/jsx-indent-props": ["error", 2],
-      "react/jsx-tag-spacing": ["error", {
-        "beforeSelfClosing": "always",
-        "afterOpening": "never",
-        "beforeClosing": "never"
-      }]
+      "indent": [
+        "error",
+        2
+      ],
+      "react/jsx-indent": [
+        "error",
+        2
+      ],
+      "react/jsx-indent-props": [
+        "error",
+        2
+      ],
+      "react/jsx-tag-spacing": [
+        "error",
+        {
+          "beforeSelfClosing": "always",
+          "afterOpening": "never",
+          "beforeClosing": "never"
+        }
+      ]
     }
   },
   "browserslist": {

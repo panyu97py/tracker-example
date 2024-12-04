@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import { ProCard, ProTable, ProTableProps} from "@ant-design/pro-components";
+import {service} from "@/service";
+import {ProCard, ProTable, ProTableProps} from "@ant-design/pro-components";
 import {columns} from "./columns";
-import {service} from "../../service";
 import {Button} from "antd";
 import {ConfigDetailModal} from "./config-detail-modal";
 
@@ -22,7 +22,7 @@ export const EventConfigManage: React.FC = () => {
       <ProTable
         columns={columns}
         request={fetchEventConfigByPage}
-        toolbar={{title: '查询列表', actions: [createEventConfigBtnVNode]}}
+        toolbar={{actions: [createEventConfigBtnVNode]}}
       />
       <ConfigDetailModal visible={visible} onClose={() => setVisible(false)} />
     </ProCard>
