@@ -9,10 +9,10 @@ export class ErrorInterceptor implements NestInterceptor<any, ResponseDto<any>> 
         return next.handle().pipe(
             catchError((error) => {
                 const message = error.message || 'Internal server error';
-                const code = error.getStatus() || 500;
-                const timestamp =  Date.now();
+                const code = error?.getErrorCode() || error.getStatus() || 500;
+                const timestamp = Date.now();
                 const errorResponse: ResponseDto<any> = {code, success: false, message, timestamp};
-                return throwError(() =>new HttpException(errorResponse, error.getStatus()));
+                return throwError(() => new HttpException(errorResponse, error.getStatus()));
             }),
         );
     }

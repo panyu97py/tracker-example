@@ -18,7 +18,7 @@ export class EventConfigEntity {
     /**
      * 事件名称
      */
-    @Column('text', {nullable: false,unique: true })
+    @Column('text', {nullable: false })
     eventName: string;
 
     /**

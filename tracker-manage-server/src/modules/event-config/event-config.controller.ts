@@ -24,4 +24,10 @@ export class EventConfigController {
         await this.eventConfigService.updateEventConfig(body);
         return true
     }
+
+    @Post('/delete')
+    async deleteEventConfig(@Param('id') id: string) {
+        await this.eventConfigService.deleteEventConfig(id);
+        return true
+    }
 }
