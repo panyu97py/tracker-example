@@ -3,11 +3,12 @@ import {ProductInfo, ProductItem} from "./product-item";
 import './index.less'
 import {incrementId} from "@/utils";
 import {useState} from "react";
+import Taro from "@tarojs/taro";
 
 const generateShortId = incrementId()
 
 
-const IndexPage = () => {
+const ProductListPage = () => {
 
   const [productList] = useState<ProductInfo[]>(() => {
     return new Array(10).fill(null).map(() => {
@@ -16,8 +17,8 @@ const IndexPage = () => {
     })
   })
 
-  const handleProductItemClick = () => {
-    console.log('product click')
+  const handleProductItemClick = (id:string) => {
+    return Taro.navigateTo({url:`/pages/product-detail/index?id=${id}`})
   }
 
   return (
@@ -26,7 +27,7 @@ const IndexPage = () => {
         <ProductItem
           key={item.id}
           productInfo={item}
-          onClick={handleProductItemClick}
+          onClick={()=>handleProductItemClick(item.id)}
           eventClickName="productClick"
           eventExposureName="productExposure"
           extendData={item}
@@ -36,4 +37,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default ProductListPage
