@@ -26,7 +26,7 @@ declare namespace NodeJS {
   }
 }
 
-import {EventConfig} from "@trackerjs/core";
+import {EventConfig} from "@trackerjs/applet";
 
 declare global {
   namespace JSX {
