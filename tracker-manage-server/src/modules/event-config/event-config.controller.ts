@@ -1,7 +1,7 @@
 import {Body, Controller, Get, Inject, Param, Post} from "@nestjs/common";
 import {PaginationReqDto} from "@/shared/dtos";
 import {EventConfigService} from "./event-config.service";
-import {CreateEventConfigDto} from "./dtos";
+import {CreateEventConfigDto, UpdateEventConfigDto} from "./dtos";
 
 @Controller('eventConfig')
 export class EventConfigController {
@@ -16,6 +16,12 @@ export class EventConfigController {
     @Post('/create')
     async createEventConfig(@Body() body: CreateEventConfigDto) {
         await this.eventConfigService.createEventConfig(body);
+        return true
+    }
+
+    @Post('/update')
+    async updateEventConfig(@Body() body: UpdateEventConfigDto) {
+        await this.eventConfigService.updateEventConfig(body);
         return true
     }
 }

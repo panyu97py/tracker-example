@@ -3,7 +3,7 @@ import {Repository} from "typeorm";
 import {EventConfigEntity} from "./event-config.entity";
 import {InjectRepository} from "@nestjs/typeorm";
 import {PaginationReqDto, PaginationResDto} from "@/shared/dtos";
-import {CreateEventConfigDto} from "@/modules/event-config/dtos";
+import {CreateEventConfigDto, UpdateEventConfigDto} from "@/modules/event-config/dtos";
 
 
 @Injectable()
@@ -19,6 +19,11 @@ export class EventConfigService {
     public async createEventConfig(params: CreateEventConfigDto): Promise<void> {
         const eventConfig = this.EventConfigRepository.create(params);
         await this.EventConfigRepository.save(eventConfig);
+    }
+
+    public async updateEventConfig(params: UpdateEventConfigDto): Promise<void> {
+        const {id} = params;
+        await this.EventConfigRepository.update({id}, params);
     }
 
     public async getEventConfigByPage(params: PaginationReqDto): Promise<PaginationResDto<EventConfigEntity>> {
