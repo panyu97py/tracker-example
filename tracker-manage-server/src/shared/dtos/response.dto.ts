@@ -1,5 +1,5 @@
 export class ResponseDto<T> {
-    data: T;
+    data?: T;
     code: number;
     success: boolean;
     message?: string;
