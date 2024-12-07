@@ -3,9 +3,9 @@ import {Module} from "@nestjs/common";
 
 const config: TypeOrmModuleOptions = {
     type: 'sqlite',
-    database: 'database.sqlite',
+    database: './database.sqlite',
     autoLoadEntities: true,
-    synchronize: false,
+    synchronize: true,
 }
 
 @Module({imports: [TypeOrmModule.forRoot(config)]})
