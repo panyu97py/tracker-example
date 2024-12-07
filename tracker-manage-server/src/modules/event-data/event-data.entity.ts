@@ -1,7 +1,7 @@
 import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 
-@Entity()
+@Entity('event-data')
 export class EventDataEntity {
 
     /**
