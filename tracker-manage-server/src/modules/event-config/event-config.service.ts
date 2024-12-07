@@ -1,11 +1,11 @@
-import {HttpException, Injectable} from "@nestjs/common";
+import {Injectable} from "@nestjs/common";
 import {Repository} from "typeorm";
-import {EventConfigEntity} from "./event-config.entity";
 import {InjectRepository} from "@nestjs/typeorm";
 import {PaginationReqDto, PaginationResDto} from "@/shared/dtos";
-import {EventConfigCreateDto, EventConfigUpdateDto} from "@/modules/event-config/dtos";
 import {CustomHttpException} from "@/shared/exceptions";
 import {plainToClass} from "class-transformer";
+import {EventConfigCreateDto, EventConfigUpdateDto} from "./dtos";
+import {EventConfigEntity} from "./event-config.entity";
 
 
 @Injectable()

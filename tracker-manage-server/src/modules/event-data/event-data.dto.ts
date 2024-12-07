@@ -1,79 +1,68 @@
-import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {IsJSON, IsNumber, IsOptional, IsString} from "class-validator";
 
-
-@Entity()
-export class EventDataEntity {
-
-    /**
-     * 主键
-     */
-    @PrimaryGeneratedColumn('uuid')
-    id: number;
-
-    /**
-     * 事件创建时间
-     */
-    @CreateDateColumn({type: 'bigint'})
-    createTime: number;
+export class EventDataDto{
 
     /**
      * 事件id
      */
-    @Column('text')
+    @IsString()
     eventId: string;
 
     /**
      * 来源事件id
      */
-    @Column('text', {nullable: true})
+    @IsString()
+    @IsOptional()
     referrerEventId: string;
 
     /**
      * 事件类型
      */
-    @Column('text')
+    @IsString()
     eventType: string;
 
     /**
      * 事件名称
      */
-    @Column('text')
+    @IsString()
     eventName: string;
 
     /**
      * 当前页面路径
      */
-    @Column('text', {nullable: true})
+    @IsString()
+    @IsOptional()
     curPagePath: string;
 
 
     /**
      * 上一页面路径
      */
-    @Column('text', {nullable: true})
+    @IsString()
+    @IsOptional()
     prePagePath: string
 
     /**
      * 事件开始事件
      */
-    @Column('integer')
+    @IsNumber()
     startTime: number;
 
     /**
      * 事件结束事件
      */
-    @Column('integer')
+    @IsNumber()
     endTime: number;
 
     /**
      * 事件持续事件
      */
-    @Column('integer')
+    @IsNumber()
     duration: number
 
     /**
      * 事件拓展数据
      */
-    @Column('json', {nullable: true})
+    @IsJSON()
     extendData: Record<string, any>;
 }

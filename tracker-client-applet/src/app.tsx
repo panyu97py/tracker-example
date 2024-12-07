@@ -4,7 +4,7 @@ import {Tracker,presetApplet} from '@trackerjs/applet'
 import '@/assets/style/font-oppo-sans/index.less'
 
 Tracker.init({
-  presets:[presetApplet({url:'http://localhost:8080',method:'POST'})],
+  presets:[presetApplet({url:'http://localhost:3000/eventData/report',method:'POST'})],
 })
 
 import counterStore from './store/counter'
