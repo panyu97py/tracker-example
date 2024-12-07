@@ -6,7 +6,7 @@ export class EventConfigEntity {
     /**
      * 主键
      */
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('uuid')
     id: string;
 
     /**
@@ -18,13 +18,13 @@ export class EventConfigEntity {
     /**
      * 事件名称
      */
-    @Column('text')
+    @Column('text', {nullable: false,unique: true })
     eventName: string;
 
     /**
      * 事件描述
      */
-    @Column('text')
+    @Column('text', {nullable: true})
     eventDesc: string;
 
     /**

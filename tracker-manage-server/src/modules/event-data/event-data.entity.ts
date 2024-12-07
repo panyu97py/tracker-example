@@ -7,74 +7,74 @@ export class EventDataEntity {
     /**
      * 主键
      */
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('uuid')
     id: number;
 
     /**
      * 事件创建时间
      */
-    @CreateDateColumn()
+    @CreateDateColumn({type: 'bigint'})
     createTime: number;
 
     /**
      * 事件id
      */
-    @Column('string')
+    @Column('text')
     eventId: string;
 
     /**
      * 来源事件id
      */
-    @Column('string')
+    @Column('text', {nullable: true})
     referrerEventId: string;
 
     /**
      * 事件类型
      */
-    @Column('string')
+    @Column('text')
     eventType: string;
 
     /**
      * 事件名称
      */
-    @Column('string')
+    @Column('text')
     eventName: string;
 
     /**
      * 当前页面路径
      */
-    @Column('string')
+    @Column('text', {nullable: true})
     curPagePath: string;
 
 
     /**
      * 上一页面路径
      */
-    @Column('string')
+    @Column('text', {nullable: true})
     prePagePath: string
 
     /**
      * 事件开始事件
      */
-    @Column('timestamp')
+    @Column('integer')
     startTime: number;
 
     /**
      * 事件结束事件
      */
-    @Column('timestamp')
+    @Column('integer')
     endTime: number;
 
     /**
      * 事件持续事件
      */
-    @Column('number')
+    @Column('integer')
     duration: number
 
     /**
      * 事件拓展数据
      */
-    @Column('json')
+    @Column('json', {nullable: true})
     extendData: string;
 
 }
