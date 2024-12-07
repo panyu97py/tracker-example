@@ -5,8 +5,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev:applet-client": "pnpm --filter tracker-client-applet dev:weapp",
-    "dev:web-manage": "pnpm --filter tracker-manage-web start"
+    "dev:client-applet": "pnpm --filter tracker-client-applet dev:weapp",
+    "dev:manage-web": "pnpm --filter tracker-manage-web start",
+    "dev:manage-server": "pnpm --filter tracker-manage-server start:dev"
   },
   "repository": {
     "type": "git",
