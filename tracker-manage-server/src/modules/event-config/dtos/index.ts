@@ -1,2 +1,2 @@
-export * from './create-event-config.dto'
-export * from './update-event-config.dto'
+export * from './event-config-create.dto'
+export * from './event-config-update.dto'
