@@ -26,10 +26,10 @@ declare namespace NodeJS {
   }
 }
 
-import {EventConfig} from "@trackerjs/applet";
+import {AppleTrackTargetConfig} from "@trackerjs/applet";
 
 declare global {
   namespace JSX {
-    interface IntrinsicAttributes extends EventConfig {}
+    interface IntrinsicAttributes extends AppleTrackTargetConfig {}
   }
 }

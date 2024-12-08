@@ -18,7 +18,15 @@ interface ProductItemProps {
 export const ProductItem: React.FC<ProductItemProps> = (props) => {
   const {productInfo, onClick = noop} = props;
   return (
-    <View className="product-item-view" onClick={onClick}>
+    <View
+      className="product-item-view"
+      selfSelector=".product-item-view"
+      eventClickName="productClick"
+      eventExposureName="productExposure"
+      eventTargetKey={productInfo?.id}
+      extendData={productInfo}
+      onClick={onClick}
+    >
       <Image className="product-main-picture" src={require('@/assets/images/logo.png')}/>
       <View className="product-info-view">
         <View className="product-name">{productInfo?.name}</View>

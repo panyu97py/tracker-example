@@ -28,9 +28,6 @@ const ProductListPage = () => {
           key={item.id}
           productInfo={item}
           onClick={()=>handleProductItemClick(item.id)}
-          eventClickName="productClick"
-          eventExposureName="productExposure"
-          extendData={item}
         />
       ))}
     </View>

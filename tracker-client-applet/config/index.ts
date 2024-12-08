@@ -1,4 +1,4 @@
-import { defineConfig, type UserConfigExport } from '@tarojs/cli'
+import {defineConfig, type UserConfigExport} from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import devConfig from './dev'
 import prodConfig from './prod'
@@ -17,14 +17,17 @@ export default defineConfig<'webpack5'>(async (merge) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: [],
-    defineConstants: {
-    },
+    plugins: [
+      ['@tarojs/plugin-inject', {
+        components: {
+          View: {'data-track-key': ''},
+        }
+      }]
+    ],
+    defineConstants: {},
     copy: {
-      patterns: [
-      ],
-      options: {
-      }
+      patterns: [],
+      options: {}
     },
     framework: 'react',
     compiler: 'webpack5',
@@ -38,9 +41,7 @@ export default defineConfig<'webpack5'>(async (merge) => {
       postcss: {
         pxtransform: {
           enable: true,
-          config: {
-
-          }
+          config: {}
         },
         cssModules: {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
