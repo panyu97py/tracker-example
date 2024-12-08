@@ -4,8 +4,8 @@ import devConfig from './dev'
 import prodConfig from './prod'
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
-export default defineConfig<'webpack5'>(async (merge) => {
-  const baseConfig: UserConfigExport<'webpack5'> = {
+export default defineConfig(async (merge) => {
+  const baseConfig: UserConfigExport = {
     projectName: 'tracker-example',
     date: '2024-12-3',
     designWidth: 750,
@@ -20,7 +20,7 @@ export default defineConfig<'webpack5'>(async (merge) => {
     plugins: [
       ['@tarojs/plugin-inject', {
         components: {
-          View: {'data-track-key': ''},
+          View: {'data-track-key': 'i.dataTrackKey'},
         }
       }]
     ],
