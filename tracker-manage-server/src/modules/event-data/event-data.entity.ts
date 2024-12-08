@@ -44,14 +44,14 @@ export class EventDataEntity {
      * 当前页面路径
      */
     @Column('text', {nullable: true})
-    curPagePath: string;
+    currentPagePath: string;
 
 
     /**
      * 上一页面路径
      */
     @Column('text', {nullable: true})
-    prePagePath: string
+    referrerPagePath: string
 
     /**
      * 事件开始事件
