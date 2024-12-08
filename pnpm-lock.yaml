@@ -56,14 +56,14 @@ importers:
         specifier: 4.0.8
         version: 4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96))
       '@trackerjs/applet':
-        specifier: 0.0.1-alpha.23
-        version: 0.0.1-alpha.23(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)
+        specifier: 0.0.1-alpha.28
+        version: 0.0.1-alpha.28(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)
       '@trackerjs/babel-plugin-inject':
-        specifier: 0.0.1-alpha.23
-        version: 0.0.1-alpha.23(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
+        specifier: 0.0.1-alpha.28
+        version: 0.0.1-alpha.28(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
       '@trackerjs/babel-preset-tracker-applet':
-        specifier: 0.0.1-alpha.23
-        version: 0.0.1-alpha.23(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)
+        specifier: 0.0.1-alpha.28
+        version: 0.0.1-alpha.28(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -2653,21 +2653,21 @@ packages:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
 
-  '@trackerjs/applet@0.0.1-alpha.23':
-    resolution: {integrity: sha512-c0HLv9OPc/jLZqGigdv13Egu4mafSbXNtsHyzOlkWww19YucdAvfd1h1sJdrJOVVJTREwwgserECPRlOmXssbA==}
+  '@trackerjs/applet@0.0.1-alpha.28':
+    resolution: {integrity: sha512-eGRQwOJUrAqxzOKt82Srw/hJyPeH39eoyU1e6rQfBsy/mASUdKdb+T1eAWokg1C+KKXmjTVoMHk4p9NzoF4bWA==}
     peerDependencies:
       '@tarojs/taro': ^3.6.29
       react: '*'
 
-  '@trackerjs/babel-plugin-inject@0.0.1-alpha.23':
-    resolution: {integrity: sha512-91dlnV9ZgeOtKmof3CLZT/AoctsVWhm7hul8Cn9a9e0ZLy1mDnut44eKrekApUfPnr+XfTdNhRAHvzbunCfqQA==}
+  '@trackerjs/babel-plugin-inject@0.0.1-alpha.28':
+    resolution: {integrity: sha512-8RsL1b3W51Fr4m8Nnar8RaivI9KMEELe/DF4m6V7ZYNnJnIH9p++KmD4OVNlKOJARJT/2Is0eyiOLBR8D3G5Hg==}
     peerDependencies:
       '@babel/generator': '*'
       '@babel/template': '*'
       '@babel/types': '*'
 
-  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.23':
-    resolution: {integrity: sha512-7Ib8bcD3zlgfvM20tHKXgReQGU2BErlsQXGsRD1lKzqsYYyw6MojAIWnr14ew7FNNTcQU+c7EtJd6f26a7HkjA==}
+  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.28':
+    resolution: {integrity: sha512-c4JwYL98AZZnzb5b5EflfXUne0mYsD6I4mVjkMs/x1hsSItDGdy99DdlX6S7qIizKJPU/5ge8OPIf2cIYGYfBQ==}
     peerDependencies:
       '@babel/generator': '*'
       '@babel/template': '*'
@@ -2675,8 +2675,8 @@ packages:
       fs: '*'
       vm: '*'
 
-  '@trackerjs/core@0.0.1-alpha.23':
-    resolution: {integrity: sha512-L+r1vsJ0lA/LlMBXKzNvm1SOzUVT9I8GdxgaGY2dpomRPNiQlObTw1lj5uKspZvYS5orrNdv1h88NRoZBSoloQ==}
+  '@trackerjs/core@0.0.1-alpha.28':
+    resolution: {integrity: sha512-shVxZ1ZCpbfE23Mckegd2LN6HCJUo2VvVahyAjsaQPS9Seo1W9lLWUSdUNG66t3WnWyFT2AWZAbfmpV1PZK/zw==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -13639,31 +13639,31 @@ snapshots:
 
   '@tootallnate/once@1.1.2': {}
 
-  '@trackerjs/applet@0.0.1-alpha.23(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)':
+  '@trackerjs/applet@0.0.1-alpha.28(@tarojs/taro@4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(react@18.3.1)':
     dependencies:
       '@tarojs/taro': 4.0.8(@tarojs/components@4.0.8(@tarojs/helper@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(react@18.3.1)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96)))(@tarojs/helper@4.0.8)(@tarojs/shared@4.0.8)(@types/react@18.3.12)(html-webpack-plugin@5.6.3(webpack@5.78.0(@swc/core@1.3.96)))(postcss@8.4.49)(rollup@3.29.5)(webpack-chain@6.5.1)(webpack-dev-server@4.15.2(webpack@5.78.0(@swc/core@1.3.96)))(webpack@5.78.0(@swc/core@1.3.96))
-      '@trackerjs/core': 0.0.1-alpha.23
+      '@trackerjs/core': 0.0.1-alpha.28
       react: 18.3.1
       use-debounce: 9.0.4(react@18.3.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@trackerjs/babel-plugin-inject@0.0.1-alpha.23(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
+  '@trackerjs/babel-plugin-inject@0.0.1-alpha.28(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
     dependencies:
       '@babel/generator': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
 
-  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.23(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)':
+  '@trackerjs/babel-preset-tracker-applet@0.0.1-alpha.28(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)':
     dependencies:
       '@babel/generator': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
-      '@trackerjs/babel-plugin-inject': 0.0.1-alpha.23(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
+      '@trackerjs/babel-plugin-inject': 0.0.1-alpha.28(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
       fs: 0.0.1-security
       vm: 0.1.0
 
-  '@trackerjs/core@0.0.1-alpha.23':
+  '@trackerjs/core@0.0.1-alpha.28':
     dependencies:
       debug: 4.3.7
     transitivePeerDependencies:
