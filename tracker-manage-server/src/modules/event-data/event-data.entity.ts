@@ -17,6 +17,19 @@ export class EventDataEntity {
     createTime: number;
 
     /**
+     * 来源事件id
+     */
+    @Column('text')
+    deviceId: string;
+
+
+    /**
+     * 来源事件id
+     */
+    @Column('text')
+    sessionId: string;
+
+    /**
      * 事件id
      */
     @Column('text')

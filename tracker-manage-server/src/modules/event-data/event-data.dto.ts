@@ -1,6 +1,21 @@
 import {IsJSON, IsNumber, IsOptional, IsString} from "class-validator";
 
+
 export class EventDataDto{
+
+    /**
+     * 会话id
+     */
+    @IsString()
+    @IsOptional()
+    sessionId: string;
+
+    /**
+     * 设备id
+     */
+    @IsString()
+    @IsOptional()
+    deviceId: string;
 
     /**
      * 事件id
