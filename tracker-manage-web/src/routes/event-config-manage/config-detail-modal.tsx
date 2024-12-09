@@ -1,4 +1,4 @@
-import React, {useImperativeHandle} from "react";
+import React, {useEffect} from "react";
 import {ModalForm, ProFormSelect, ProFormText} from "@ant-design/pro-components";
 import {Form} from "antd";
 import {noop} from "@/utils";
@@ -14,12 +14,15 @@ export interface ConfigDetailModalHandler {
     setFieldsValue: (values: Record<string, any>) => void;
 }
 
-export const ConfigDetailModal = React.forwardRef<ConfigDetailModalHandler, ConfigDetailModalProps>((props, ref) => {
-  const {visible, onFinish, onVisibleChange = noop} = props;
+export const ConfigDetailModal: React.FC<ConfigDetailModalProps> = (props) => {
+  const {visible, value, onFinish, onVisibleChange = noop} = props;
 
   const [form] = Form.useForm()
 
-  useImperativeHandle(ref, () => ({setFieldsValue: form.setFieldsValue}))
+  useEffect(() => {
+    form.setFieldsValue(value)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   return (
     <ModalForm
@@ -56,4 +59,4 @@ export const ConfigDetailModal = React.forwardRef<ConfigDetailModalHandler, Conf
       />
     </ModalForm>
   )
-})
+}

@@ -1,10 +1,11 @@
 import React, {useRef, useState} from "react";
-import {service} from "@/service";
+import {EventConfig, EventConfigListItem, eventConfigService} from "@/service";
 import {ProCard, ProTable, ProTableProps} from "@ant-design/pro-components";
 import {columns} from "./columns";
 import {Button} from "antd";
-import {ConfigDetailModal, ConfigDetailModalHandler} from "./config-detail-modal";
+import {ConfigDetailModal} from "./config-detail-modal";
 import {EventConfigManagementCtx, EventConfigManagementCtxVal} from "./context";
+import type {ActionType} from '@ant-design/pro-components';
 
 
 enum OperateType {
@@ -18,9 +19,9 @@ export const EventConfigManage: React.FC = () => {
 
   const [operateType, setOperateType] = useState<OperateType>(OperateType.EDIT);
 
-  const configDetailModalRef = useRef<ConfigDetailModalHandler>(null)
+  const [waitEditData, setWaitEditData] = useState<EventConfig>();
 
-
+  const proTableRef = useRef<ActionType>(null);
 
   const handleCreateEventConfig = () => {
     setOperateType(OperateType.CREATE)
@@ -30,23 +31,30 @@ export const EventConfigManage: React.FC = () => {
   const handleLookEventDataTrend = () => {
   }
 
-  const handleEditEventConfig = (dataItem:any) => {
-    configDetailModalRef.current?.setFieldsValue(dataItem)
-    setOperateType(OperateType.CREATE)
+  const handleEditEventConfig = async (dataItem: EventConfigListItem) => {
+    const {id} = dataItem;
+    const eventConfigDetail = await eventConfigService.fetchEventConfigDetail({id})
+    setOperateType(OperateType.EDIT)
     setConfigDetailModalVisible(true)
+    setWaitEditData(eventConfigDetail);
   }
 
-  const handleDeleteEventConfig = () => {
+  const handleDeleteEventConfig = async (dataItem: EventConfigListItem) => {
+    const {id} = dataItem;
+    await eventConfigService.deleteEventConfig({id})
+    proTableRef.current?.reload()
   }
 
-  const handleSubmitEventConfig = async (value: any) => {
-    console.log({value, operateType})
+  const handleSubmitEventConfig = async (value: EventConfig) => {
+    if (operateType === OperateType.CREATE) await eventConfigService.createEventConfig(value)
+    if (operateType === OperateType.EDIT) await eventConfigService.updateEventConfig(value)
     setConfigDetailModalVisible(false)
+    proTableRef.current?.reload()
   }
 
-  const fetchEventConfigByPage: ProTableProps<any, any>['request'] = async (params, sort, filter) => {
-    const data = await service.fetchEventConfigByPage(params)
-    return {data}
+  const fetchEventConfigByPage: ProTableProps<any, any>['request'] = async (params) => {
+    const {data, total} = await eventConfigService.fetchEventConfigByPage(params)
+    return {data, total}
   }
 
 
@@ -62,15 +70,16 @@ export const EventConfigManage: React.FC = () => {
     <EventConfigManagementCtx.Provider value={ctxVal}>
       <ProCard>
         <ProTable
+          actionRef={proTableRef}
           columns={columns}
           request={fetchEventConfigByPage}
           toolbar={{actions: [createEventConfigBtnVNode]}}
         />
         <ConfigDetailModal
-          ref={configDetailModalRef}
+          value={waitEditData}
           visible={configDetailModalVisible}
           onFinish={handleSubmitEventConfig}
-          onVisibleChange={(visible)=>setConfigDetailModalVisible(visible)}
+          onVisibleChange={(visible) => setConfigDetailModalVisible(visible)}
         />
       </ProCard>
     </EventConfigManagementCtx.Provider>

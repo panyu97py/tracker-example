@@ -65,7 +65,7 @@ export const columns: ProTableProps<any, any>['columns'] = [
             />
             <Link
               type="link"
-              effectName="lookEventDataTrend"
+              effectName="editEventConfig"
               effectParams={record}
               content="编辑"
             />

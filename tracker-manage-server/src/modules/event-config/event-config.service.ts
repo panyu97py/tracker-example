@@ -1,11 +1,12 @@
 import {Injectable} from "@nestjs/common";
 import {Repository} from "typeorm";
 import {InjectRepository} from "@nestjs/typeorm";
-import {PaginationReqDto, PaginationResDto} from "@/shared/dtos";
+import {PaginationResDto} from "@/shared/dtos";
 import {CustomHttpException} from "@/shared/exceptions";
 import {plainToClass} from "class-transformer";
 import {EventConfigCreateDto, EventConfigUpdateDto} from "./dtos";
 import {EventConfigEntity} from "./event-config.entity";
+import {EventConfigQueryDto} from "@/modules/event-config/dtos/event-config-query.dto";
 
 
 @Injectable()
@@ -15,7 +16,7 @@ export class EventConfigService {
     private eventConfigRepository: Repository<EventConfigEntity>;
 
     public async getEventConfigById(id: string): Promise<EventConfigUpdateDto> {
-        const eventConfig = await this.eventConfigRepository.findOneBy({id});
+        const eventConfig = await this.eventConfigRepository.findOne({where: {id}});
         return plainToClass(EventConfigUpdateDto, eventConfig, {excludeExtraneousValues: true});
     }
 
@@ -36,11 +37,12 @@ export class EventConfigService {
         await this.eventConfigRepository.update({id}, {deleteFlag: 1});
     }
 
-    public async getEventConfigByPage(params: PaginationReqDto): Promise<PaginationResDto<EventConfigEntity>> {
-        const {pageNum = 1, pageSize = 10} = params || {};
+    public async getEventConfigByPage(params: EventConfigQueryDto): Promise<PaginationResDto<EventConfigEntity>> {
+        const {pageNum = 1, pageSize = 10, ...other} = params || {};
         const skip = (pageNum - 1) * pageSize;
         const take = pageSize;
-        const [data, total] = await this.eventConfigRepository.findAndCount({where: {deleteFlag: 0}, skip, take})
+        const where = {...other, deleteFlag: 0}
+        const [data, total] = await this.eventConfigRepository.findAndCount({where, skip, take})
         return {data, total, pageNum, pageSize}
     }
 }

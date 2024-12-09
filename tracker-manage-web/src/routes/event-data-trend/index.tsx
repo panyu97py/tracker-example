@@ -2,7 +2,6 @@ import {Statistic} from "antd";
 import {ProCard} from "@ant-design/pro-components";
 import {Chart} from "./chart";
 import React, {useEffect} from "react";
-import {service} from "@/service";
 import {useParams} from 'react-router';
 
 export const EventDataTrend = () => {
@@ -12,8 +11,8 @@ export const EventDataTrend = () => {
   const [data, setData] = React.useState<any>({})
 
   const fetchData = async () => {
-    const res = await service.fetchEventDataTrendData({id})
-    setData(res)
+    // const res = await service.fetchEventDataTrendData({id})
+    setData({})
   }
 
   useEffect(() => {

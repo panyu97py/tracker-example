@@ -1,7 +1,8 @@
-import {Body, Controller, Delete, Get, Inject, Param, Post} from "@nestjs/common";
+import {Body, Controller, Delete, Get, Inject, Param, Post, Put, Query} from "@nestjs/common";
 import {PaginationReqDto} from "@/shared/dtos";
 import {EventConfigService} from "./event-config.service";
 import {EventConfigCreateDto, EventConfigUpdateDto} from "./dtos";
+import {EventConfigQueryDto} from "@/modules/event-config/dtos/event-config-query.dto";
 
 @Controller('eventConfig')
 export class EventConfigController {
@@ -9,12 +10,12 @@ export class EventConfigController {
     private readonly eventConfigService: EventConfigService;
 
     @Get('/queryByPage')
-    async getEventConfigByPage(@Param() params: PaginationReqDto) {
+    async getEventConfigByPage(@Query() params: EventConfigQueryDto) {
         return await this.eventConfigService.getEventConfigByPage(params);
     }
 
     @Get('/detail')
-    async getEventConfigDetail(@Param('id') id: string) {
+    async getEventConfigDetail(@Query('id') id: string) {
         return await this.eventConfigService.getEventConfigById(id);
     }
 
@@ -30,8 +31,8 @@ export class EventConfigController {
         return true
     }
 
-    @Delete('/delete')
-    async deleteEventConfig(@Param('id') id: string) {
+    @Post('/delete')
+    async deleteEventConfig(@Body('id') id: string) {
         await this.eventConfigService.deleteEventConfig(id);
         return true
     }

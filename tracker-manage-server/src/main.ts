@@ -2,9 +2,12 @@ import {NestFactory} from '@nestjs/core';
 import {AppModule} from './app.module';
 import {ErrorInterceptor, ResponseInterceptor} from "@/interceptor";
 import {ValidationPipe} from "@nestjs/common";
+import {FilterEmptyStringsPipe} from "@/pipes";
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
+
+    app.enableCors();
 
     app.useGlobalInterceptors(
         new ResponseInterceptor(),
@@ -12,6 +15,7 @@ async function bootstrap() {
     );
 
     app.useGlobalPipes(
+        new FilterEmptyStringsPipe(),
         new ValidationPipe({
             transform: true, // 自动将请求体转换为 DTO 类实例
             whitelist: true, // 自动移除 DTO 中没有定义的属性
