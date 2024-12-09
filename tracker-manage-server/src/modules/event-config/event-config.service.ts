@@ -3,10 +3,10 @@ import {Repository} from "typeorm";
 import {InjectRepository} from "@nestjs/typeorm";
 import {PaginationResDto} from "@/shared/dtos";
 import {CustomHttpException} from "@/shared/exceptions";
-import {plainToClass} from "class-transformer";
-import {EventConfigCreateDto, EventConfigUpdateDto} from "./dtos";
+import {plainToInstance} from "class-transformer";
+import {EventConfigCreateDto, EventConfigQueryResultDto, EventConfigUpdateDto} from "./dtos";
 import {EventConfigEntity} from "./event-config.entity";
-import {EventConfigQueryDto} from "@/modules/event-config/dtos/event-config-query.dto";
+import {EventConfigQueryParamsDto} from "./dtos";
 
 
 @Injectable()
@@ -17,7 +17,7 @@ export class EventConfigService {
 
     public async getEventConfigById(id: string): Promise<EventConfigUpdateDto> {
         const eventConfig = await this.eventConfigRepository.findOne({where: {id}});
-        return plainToClass(EventConfigUpdateDto, eventConfig, {excludeExtraneousValues: true});
+        return plainToInstance(EventConfigUpdateDto, eventConfig, {excludeExtraneousValues: true});
     }
 
     public async createEventConfig(params: EventConfigCreateDto): Promise<void> {
@@ -37,12 +37,13 @@ export class EventConfigService {
         await this.eventConfigRepository.update({id}, {deleteFlag: 1});
     }
 
-    public async getEventConfigByPage(params: EventConfigQueryDto): Promise<PaginationResDto<EventConfigEntity>> {
+    public async getEventConfigByPage(params: EventConfigQueryParamsDto): Promise<PaginationResDto<EventConfigQueryResultDto>> {
         const {pageNum = 1, pageSize = 10, ...other} = params || {};
         const skip = (pageNum - 1) * pageSize;
         const take = pageSize;
         const where = {...other, deleteFlag: 0}
-        const [data, total] = await this.eventConfigRepository.findAndCount({where, skip, take})
+        const [list, total] = await this.eventConfigRepository.findAndCount({where, skip, take})
+        const data = plainToInstance(EventConfigQueryResultDto, list, {excludeExtraneousValues: true});
         return {data, total, pageNum, pageSize}
     }
 }

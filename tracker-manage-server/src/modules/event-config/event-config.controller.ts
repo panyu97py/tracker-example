@@ -1,16 +1,13 @@
-import {Body, Controller, Delete, Get, Inject, Param, Post, Put, Query} from "@nestjs/common";
-import {PaginationReqDto} from "@/shared/dtos";
+import {Body, Controller,  Get, Inject, Post, Query} from "@nestjs/common";
 import {EventConfigService} from "./event-config.service";
-import {EventConfigCreateDto, EventConfigUpdateDto} from "./dtos";
-import {EventConfigQueryDto} from "@/modules/event-config/dtos/event-config-query.dto";
-
+import {EventConfigCreateDto, EventConfigUpdateDto,EventConfigQueryParamsDto} from "./dtos";
 @Controller('eventConfig')
 export class EventConfigController {
     @Inject()
     private readonly eventConfigService: EventConfigService;
 
     @Get('/queryByPage')
-    async getEventConfigByPage(@Query() params: EventConfigQueryDto) {
+    async getEventConfigByPage(@Query() params: EventConfigQueryParamsDto) {
         return await this.eventConfigService.getEventConfigByPage(params);
     }
 

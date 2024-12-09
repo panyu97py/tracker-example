@@ -49,7 +49,18 @@ export const columns: ProTableProps<any, any>['columns'] = [
     ],
     tooltip: '每30分钟更新一次',
   },
+  {
 
+    title: '创建时间',
+    dataIndex: 'createTime',
+    key: 'createTime',
+  },
+  {
+
+    title: '修改时间',
+    dataIndex: 'updateTime',
+    key: 'updateTime',
+  },
   {
     title: '操作',
     search: false,
