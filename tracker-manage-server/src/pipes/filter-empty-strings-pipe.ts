@@ -7,11 +7,16 @@ export class FilterEmptyStringsPipe implements PipeTransform {
         if (typeof value === 'string' && value.trim() === '') return null;
 
         // 如果是对象，递归处理对象中的空字符串
-        if (typeof value === 'object' && value !== null) {
+        if (typeof value === 'object' && !Array.isArray(value) && value !== null) {
             return Object.keys(value).reduce((acc, key) => {
                 acc[key] = this.transform(value[key], metadata); // 递归处理每个键值
                 return acc;
             }, {}); // 返回处理后的新对象
+        }
+
+        // 如果是数组，递归处理对象中的空字符串
+        if (typeof value === 'object' && Array.isArray(value) && value !== null){
+            return value.map((item) => this.transform(item, metadata));
         }
 
         return value;
