@@ -53,12 +53,14 @@ export const columns: ProTableProps<any, any>['columns'] = [
 
     title: '创建时间',
     dataIndex: 'createTime',
+    hideInSearch: true,
     key: 'createTime',
   },
   {
 
     title: '修改时间',
     dataIndex: 'updateTime',
+    hideInSearch: true,
     key: 'updateTime',
   },
   {
