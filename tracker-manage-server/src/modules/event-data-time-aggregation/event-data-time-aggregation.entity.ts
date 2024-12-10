@@ -1,6 +1,6 @@
 import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique} from "typeorm";
 
-@Entity('event-data-minute-aggregation')
+@Entity('event-data-time-aggregation')
 @Unique(['eventType', 'eventName', 'startTimestamp', 'endTimestamp'])
 export class EventDataTimeAggregationEntity {
     @PrimaryGeneratedColumn('uuid')
