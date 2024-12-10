@@ -1,24 +1,21 @@
 import {Cron} from '@nestjs/schedule';
-import {DataSource, Repository} from "typeorm";
+import {Repository} from "typeorm";
 import {InjectRepository} from "@nestjs/typeorm";
 import {EventDataMinuteAggregationEntity} from "./event-data-minute-aggregation.entity";
-import {EventDataRepository} from "@/modules/event-data/event-data.repository";
-import {Injectable, Logger} from "@nestjs/common";
+import {Inject, Injectable, Logger} from "@nestjs/common";
 import * as moment from "moment";
+import {EventDataService} from "@/modules/event-data/event-data.service";
 
 @Injectable()
 export class EventDataMinuteAggregationService {
 
-    private readonly logger = new Logger(EventDataMinuteAggregationService.name);  // 创建日志实例
-
-    private readonly eventDataRepository: EventDataRepository;
+    @Inject()
+    private readonly eventDataService: EventDataService;
 
     @InjectRepository(EventDataMinuteAggregationEntity)
     private readonly eventMinuteTrendRepository: Repository<EventDataMinuteAggregationEntity>
 
-    constructor(dataSource: DataSource) {
-        this.eventDataRepository = new EventDataRepository(dataSource);
-    }
+    private readonly logger = new Logger(EventDataMinuteAggregationService.name);  // 创建日志实例
 
     // 每分钟执行聚合
     @Cron('0 * * * * *')  // 每分钟的第0秒执行
@@ -28,7 +25,7 @@ export class EventDataMinuteAggregationService {
         const minuteEnd = lastMinute.endOf('minute').valueOf();
         const timeFormat = (timestamp:number)=>moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
         this.logger.log(`开始聚合${timeFormat(minuteStart)}~${timeFormat(minuteEnd)}的数据`);
-        const minuteData = await this.eventDataRepository.aggregateEventDataByMinute(minuteStart, minuteEnd);
+        const minuteData = await this.eventDataService.aggregateMinuteEventData(minuteStart, minuteEnd);
         const minuteAggregationData = this.eventMinuteTrendRepository.create(minuteData);
         await this.eventMinuteTrendRepository.save(minuteAggregationData);
         this.logger.log(`聚合${timeFormat(minuteStart)}~${timeFormat(minuteEnd)}的数据完成`);

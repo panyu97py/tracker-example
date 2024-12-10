@@ -9,7 +9,7 @@ import {EventDataRepository} from "./event-data.repository";
     imports: [TypeOrmModule.forFeature([EventDataEntity,EventDataRepository])],
     providers: [EventDataService],
     controllers: [EventDataController],
-    exports: [TypeOrmModule]
+    exports: [EventDataService]
 })
 export class EventDataModule {
 }

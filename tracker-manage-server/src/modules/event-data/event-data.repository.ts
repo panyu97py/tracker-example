@@ -1,7 +1,7 @@
 import {DataSource, Repository} from "typeorm";
 import {EventDataEntity} from "./event-data.entity";
 
-interface MinuteAggregationResult {
+export interface MinuteAggregationResult {
     startTimestamp: number;
     endTimestamp: number;
     eventType: string;

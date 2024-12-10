@@ -1,14 +1,22 @@
-import {Repository} from "typeorm";
-import {EventDataEntity} from "./event-data.entity";
+import {DataSource} from "typeorm";
 import {EventDataDto} from "./event-data.dto";
-import {InjectRepository} from "@nestjs/typeorm";
+import {EventDataRepository} from "./event-data.repository";
+import {Injectable} from "@nestjs/common";
 
+@Injectable()
 export class EventDataService {
-    @InjectRepository(EventDataEntity)
-    private readonly eventDataRepository: Repository<EventDataEntity>;
+    private readonly eventDataRepository: EventDataRepository;
+
+    constructor(dataSource: DataSource) {
+        this.eventDataRepository = new EventDataRepository(dataSource);
+    }
 
     public async appendEventData(eventDataDtoList: EventDataDto[]): Promise<void> {
         const eventDataList = this.eventDataRepository.create(eventDataDtoList);
         await this.eventDataRepository.save(eventDataList);
+    }
+
+    public async aggregateMinuteEventData(startTimestamp: number, endTimestamp: number) {
+        return this.eventDataRepository.aggregateEventDataByMinute(startTimestamp, endTimestamp);
     }
 }
