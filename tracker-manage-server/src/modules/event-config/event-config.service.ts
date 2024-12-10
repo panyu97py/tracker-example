@@ -3,7 +3,6 @@ import {Repository} from "typeorm";
 import {InjectRepository} from "@nestjs/typeorm";
 import {PaginationResDto} from "@/shared/dtos";
 import {CustomHttpException} from "@/shared/exceptions";
-import {EventDataMinuteAggregationService} from "@/modules/event-data-minute-aggregation/event-data-minute-aggregation.service";
 import {plainToInstance} from "class-transformer";
 import {EventConfigCreateDto, EventConfigQueryResultDto, EventConfigUpdateDto} from "./dtos";
 import {EventConfigEntity} from "./event-config.entity";

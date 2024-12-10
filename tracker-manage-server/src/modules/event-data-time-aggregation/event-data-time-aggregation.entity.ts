@@ -2,7 +2,7 @@ import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique} from "
 
 @Entity('event-data-minute-aggregation')
 @Unique(['eventType', 'eventName', 'startTimestamp', 'endTimestamp'])
-export class EventDataMinuteAggregationEntity {
+export class EventDataTimeAggregationEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 

@@ -1,6 +1,6 @@
 import {IsNumber, IsString} from "class-validator";
 
-export class EventDataMinuteAggregationDto {
+export class EventDataTimeAggregationDto {
 
     @IsString()
     eventType: string;
@@ -19,4 +19,12 @@ export class EventDataMinuteAggregationDto {
 
     @IsNumber()
     uvCount: number;
+}
+export class EventDataTimeAggregationTrendReqDto {
+    @IsString()
+    eventId: string;
+    @IsString()
+    startTimestamp: number;
+    @IsString()
+    endTimestamp: number;
 }

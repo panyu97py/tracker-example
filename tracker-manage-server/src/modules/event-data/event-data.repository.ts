@@ -12,7 +12,7 @@ export interface MinuteAggregationResult {
 
 export class EventDataRepository extends Repository<EventDataEntity> {
 
-    constructor(private dataSource: DataSource) {
+    constructor(dataSource: DataSource) {
         super(EventDataEntity, dataSource.createEntityManager());  // 使用 dataSource 初始化 Repository
     }
 

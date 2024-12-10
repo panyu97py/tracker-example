@@ -8,5 +8,6 @@ import {EventConfigController} from "./event-config.controller";
     imports: [TypeOrmModule.forFeature([EventConfigEntity])],
     providers: [EventConfigService],
     controllers: [EventConfigController],
+    exports: [EventConfigService],
 })
 export class EventConfigModule {}
