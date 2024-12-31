@@ -59,14 +59,14 @@ importers:
         specifier: 3.6.29
         version: 3.6.29(@tarojs/helper@3.6.29)(@tarojs/runtime@3.6.29(@tarojs/shared@3.6.29))(@types/react@18.3.12)(postcss@8.4.49)
       '@trackerjs/applet':
-        specifier: 0.0.1
-        version: 0.0.1(@tarojs/taro@3.6.29(@tarojs/helper@3.6.29)(@tarojs/runtime@3.6.29(@tarojs/shared@3.6.29))(@types/react@18.3.12)(postcss@8.4.49))(react@18.3.1)
-      '@trackerjs/babel-plugin-inject':
-        specifier: 0.0.1
-        version: 0.0.1(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
+        specifier: 0.0.2
+        version: 0.0.2(@tarojs/taro@3.6.29(@tarojs/helper@3.6.29)(@tarojs/runtime@3.6.29(@tarojs/shared@3.6.29))(@types/react@18.3.12)(postcss@8.4.49))(react@18.3.1)
+      '@trackerjs/babel-plugin-jsx-inject':
+        specifier: 0.0.2
+        version: 0.0.2(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
       '@trackerjs/babel-preset-tracker-applet':
-        specifier: 0.0.1
-        version: 0.0.1(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)
+        specifier: 0.0.2
+        version: 0.0.2(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -2689,21 +2689,21 @@ packages:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
 
-  '@trackerjs/applet@0.0.1':
-    resolution: {integrity: sha512-Jelu16fR7KtF0bNg0qgOSmaJWY3uMncMbJLAWocJRxRf9Hz78tNMD+Q3IF57/UG99G4y6h9qJt8jy716cnxiew==}
+  '@trackerjs/applet@0.0.2':
+    resolution: {integrity: sha512-4Yyyfdw7X1OBfx4OLGDe9oSBz5cgLfHsDUKX6ge8cgKQGD8rrWyb4cfMCRST4eIN9CHJ/FjBzbfaTLMbSXprpg==}
     peerDependencies:
       '@tarojs/taro': ^3.6.29
       react: '*'
 
-  '@trackerjs/babel-plugin-inject@0.0.1':
-    resolution: {integrity: sha512-o4Y6cpUL4zvAXXpNVHNBkLV+DWc08E9X4uOgNVXfjv1ozUuMo8d3OfLFu5Xr+N8LOtjEAd2qaodecCrL4P4kfA==}
+  '@trackerjs/babel-plugin-jsx-inject@0.0.2':
+    resolution: {integrity: sha512-Av8XriIGDccb0y5Pl/vOBFm8xue5DNffdwjTOHfjNL5owe9TYksf5gBSeWkDhqnQ2Y8yGrtM93GwUIrQKtFH6A==}
     peerDependencies:
       '@babel/generator': '*'
       '@babel/template': '*'
       '@babel/types': '*'
 
-  '@trackerjs/babel-preset-tracker-applet@0.0.1':
-    resolution: {integrity: sha512-jZ3D9Zs+/ceeK6L0ft8cGsRjyPklMMldd7MZR12S7CH5eucVoyA2nQR7kxw2xZjmA+97clouhtum5tniBoKIuw==}
+  '@trackerjs/babel-preset-tracker-applet@0.0.2':
+    resolution: {integrity: sha512-rDuvd3ob5gq+2OQ2ZNghtURRaWLC9hNc3zpSlvupavmhDOMGWgJUPVX3mjkfyyB2Nm/c/4DoJEsg9FqSNb6IrA==}
     peerDependencies:
       '@babel/generator': '*'
       '@babel/template': '*'
@@ -2711,8 +2711,8 @@ packages:
       fs: '*'
       vm: '*'
 
-  '@trackerjs/core@0.0.1':
-    resolution: {integrity: sha512-yDtnPNJWnStP8y1gCeg6qPJWdF1v3L2heTIgcHOQ7DXBCeiBU00CJ1bX3wEYLAqG2NfntH8lclMb1d20UH98mQ==}
+  '@trackerjs/core@0.0.2':
+    resolution: {integrity: sha512-dS7nZK/WBzP6klCiD0PKdKJlWTkd6Qjh7kE8AJsPEjKETwXtm+BRkU88s8JqOm/0X14YLfVcS8o2ux2GSTc86Q==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -14329,31 +14329,31 @@ snapshots:
 
   '@tootallnate/once@2.0.0': {}
 
-  '@trackerjs/applet@0.0.1(@tarojs/taro@3.6.29(@tarojs/helper@3.6.29)(@tarojs/runtime@3.6.29(@tarojs/shared@3.6.29))(@types/react@18.3.12)(postcss@8.4.49))(react@18.3.1)':
+  '@trackerjs/applet@0.0.2(@tarojs/taro@3.6.29(@tarojs/helper@3.6.29)(@tarojs/runtime@3.6.29(@tarojs/shared@3.6.29))(@types/react@18.3.12)(postcss@8.4.49))(react@18.3.1)':
     dependencies:
       '@tarojs/taro': 3.6.29(@tarojs/helper@3.6.29)(@tarojs/runtime@3.6.29(@tarojs/shared@3.6.29))(@types/react@18.3.12)(postcss@8.4.49)
-      '@trackerjs/core': 0.0.1
+      '@trackerjs/core': 0.0.2
       react: 18.3.1
       use-debounce: 9.0.4(react@18.3.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@trackerjs/babel-plugin-inject@0.0.1(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
+  '@trackerjs/babel-plugin-jsx-inject@0.0.2(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)':
     dependencies:
       '@babel/generator': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
 
-  '@trackerjs/babel-preset-tracker-applet@0.0.1(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)':
+  '@trackerjs/babel-preset-tracker-applet@0.0.2(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)(fs@0.0.1-security)(vm@0.1.0)':
     dependencies:
       '@babel/generator': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
-      '@trackerjs/babel-plugin-inject': 0.0.1(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
+      '@trackerjs/babel-plugin-jsx-inject': 0.0.2(@babel/generator@7.26.2)(@babel/template@7.25.9)(@babel/types@7.26.0)
       fs: 0.0.1-security
       vm: 0.1.0
 
-  '@trackerjs/core@0.0.1':
+  '@trackerjs/core@0.0.2':
     dependencies:
       debug: 4.3.7
     transitivePeerDependencies:
