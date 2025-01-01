@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev:client-applet": "pnpm --filter tracker-client-applet dev:weapp",
     "dev:manage-web": "pnpm --filter tracker-manage-web start",
     "dev:manage-server": "pnpm --filter tracker-manage-server start:dev"
