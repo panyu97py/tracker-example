@@ -3,6 +3,7 @@ import {EventConfigManage} from "@/routes/event-config-manage";
 import {EventDataTrend} from "@/routes/event-data-trend";
 import {PageContainer} from "@ant-design/pro-components";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import LoginPage from '@/routes/login';
 import './App.css';
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
       <PageContainer>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<EventConfigManage />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/config" element={<EventConfigManage />} />
             <Route path="/trend/:id" element={<EventDataTrend />} />
           </Routes>
         </BrowserRouter>
