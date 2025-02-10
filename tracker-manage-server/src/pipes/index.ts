@@ -1,1 +1,1 @@
-export * from './filter-empty-strings-pipe'
+export * from './filter-empty-strings-pipe';

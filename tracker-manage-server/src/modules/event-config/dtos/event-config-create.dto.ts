@@ -1,13 +1,13 @@
-import {IsOptional, IsString} from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class EventConfigCreateDto {
-    @IsString()
-    eventType: string;
+  @IsString()
+  eventType: string;
 
-    @IsString()
-    eventName: string;
+  @IsString()
+  eventName: string;
 
-    @IsString()
-    @IsOptional()
-    eventDesc?: string;
+  @IsString()
+  @IsOptional()
+  eventDesc?: string;
 }

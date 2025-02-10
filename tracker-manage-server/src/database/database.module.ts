@@ -1,13 +1,12 @@
-import {TypeOrmModule, TypeOrmModuleOptions} from '@nestjs/typeorm';
-import {Module} from "@nestjs/common";
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { Module } from '@nestjs/common';
 
 const config: TypeOrmModuleOptions = {
-    type: 'sqlite',
-    database: './database.sqlite',
-    autoLoadEntities: true,
-    synchronize: true,
-}
+  type: 'sqlite',
+  database: './database.sqlite',
+  autoLoadEntities: true,
+  synchronize: true,
+};
 
-@Module({imports: [TypeOrmModule.forRoot(config)]})
-
+@Module({ imports: [TypeOrmModule.forRoot(config)] })
 export class DatabaseModule {}
