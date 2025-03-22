@@ -18,7 +18,13 @@ export interface EventConfigListItem {
 
 
 export interface IReqId {
-    id: string;
+    id?: string;
+}
+
+export interface IReqEventDataTrendData {
+    eventId?:string
+    startTimestamp?: number;
+    endTimestamp?: number;
 }
 
 export interface IReqFetchEventConfigByPage extends PaginationParams {

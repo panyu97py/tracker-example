@@ -6,6 +6,7 @@ import {Button} from "antd";
 import {ConfigDetailModal} from "./config-detail-modal";
 import {EventConfigManagementCtx, EventConfigManagementCtxVal} from "./context";
 import type {ActionType} from '@ant-design/pro-components';
+import { useNavigate } from 'react-router-dom';
 
 
 enum OperateType {
@@ -23,13 +24,15 @@ export const EventConfigManage: React.FC = () => {
 
   const proTableRef = useRef<ActionType>(null);
 
+  const navigate = useNavigate();
+
+
   const handleCreateEventConfig = () => {
     setOperateType(OperateType.CREATE)
     setConfigDetailModalVisible(true)
   }
 
-  const handleLookEventDataTrend = () => {
-  }
+  const handleLookEventDataTrend = (dataItem: EventConfigListItem) => navigate(`/trend/${dataItem.id}`,)
 
   const handleEditEventConfig = async (dataItem: EventConfigListItem) => {
     const {id} = dataItem;
