@@ -40,11 +40,11 @@ export const columns: ProTableProps<any, any>['columns'] = [
     children: [
       {
         title: '次数（PV）',
-        dataIndex: ['counts', 0, `p${nowDate}`],
+        dataIndex: 'pvCount',
       },
       {
         title: '人数（UV）',
-        dataIndex: ['counts', 0, `u${nowDate}`],
+        dataIndex: 'uvCount',
       },
     ],
     tooltip: '每30分钟更新一次',

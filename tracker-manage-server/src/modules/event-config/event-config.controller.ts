@@ -1,18 +1,29 @@
 import { Body, Controller, Get, Inject, Post, Query } from '@nestjs/common';
 import { EventConfigService } from './event-config.service';
-import {
-  EventConfigCreateDto,
-  EventConfigUpdateDto,
-  EventConfigQueryParamsDto,
-} from './dtos';
+import { EventConfigCreateDto, EventConfigUpdateDto, EventConfigQueryParamsDto } from './dtos';
+import { EventDataTimeAggregationService } from '@/modules/event-data-time-aggregation/event-data-time-aggregation.service';
+import * as moment from 'moment';
 @Controller('eventConfig')
 export class EventConfigController {
   @Inject()
   private readonly eventConfigService: EventConfigService;
 
+  @Inject()
+  private readonly eventDataTimeAggregationService: EventDataTimeAggregationService;
+
   @Get('/queryByPage')
   async getEventConfigByPage(@Query() params: EventConfigQueryParamsDto) {
-    return await this.eventConfigService.getEventConfigByPage(params);
+    const eventConfigPageData = await this.eventConfigService.getEventConfigByPage(params);
+    const { data: eventConfigData } = eventConfigPageData;
+    const startTime = moment().startOf('day').valueOf();
+    const endTime = moment().endOf('day').valueOf();
+    const trendQuery = eventConfigData.map(async (item) => {
+      const trendData = await this.eventDataTimeAggregationService.aggregateEventData(item.id, startTime, endTime);
+      const { pvCount, uvCount } = trendData || {};
+      return { ...item, pvCount, uvCount };
+    });
+    const data = await Promise.all(trendQuery);
+    return { ...eventConfigPageData, data };
   }
 
   @Get('/detail')

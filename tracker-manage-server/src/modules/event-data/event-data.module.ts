@@ -1,15 +1,14 @@
-import {Module} from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {EventDataEntity} from "./event-data.entity";
-import {EventDataController} from "./event-data.controller";
-import {EventDataService} from "./event-data.service";
-import {EventDataRepository} from "./event-data.repository";
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { EventDataEntity } from './event-data.entity';
+import { EventDataController } from './event-data.controller';
+import { EventDataService } from './event-data.service';
+import { EventDataRepository } from './event-data.repository';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([EventDataEntity,EventDataRepository])],
-    providers: [EventDataService],
-    controllers: [EventDataController],
-    exports: [EventDataService]
+  imports: [TypeOrmModule.forFeature([EventDataEntity, EventDataRepository])],
+  providers: [EventDataService],
+  controllers: [EventDataController],
+  exports: [EventDataService]
 })
-export class EventDataModule {
-}
+export class EventDataModule {}

@@ -1,11 +1,6 @@
 import { Module } from '@nestjs/common';
 import { DatabaseModule } from '@/database/database.module';
-import {
-  EventDataTimeAggregationModule,
-  EventDataModule,
-  EventConfigModule,
-  SystemAuthModule,
-} from '@/modules';
+import { EventDataTimeAggregationModule, EventDataModule, EventConfigModule, SystemAuthModule } from '@/modules';
 import { CacheModule } from '@nestjs/cache-manager';
 import { ScheduleModule } from '@nestjs/schedule';
 import { AppController } from './app.controller';
@@ -19,9 +14,9 @@ import { AppService } from './app.service';
     EventDataTimeAggregationModule,
     SystemAuthModule,
     ScheduleModule.forRoot(),
-    CacheModule.register({ ttl: 5 }),
+    CacheModule.register({ ttl: 5 })
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}
