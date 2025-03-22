@@ -27,6 +27,10 @@ export interface IReqEventDataTrendData {
     endTimestamp?: number;
 }
 
+export interface IReqEventDataCountData {
+    eventId?:string
+}
+
 export interface IReqFetchEventConfigByPage extends PaginationParams {
     eventName: string;
     eventType: string;

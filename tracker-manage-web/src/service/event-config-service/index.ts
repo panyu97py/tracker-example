@@ -1,6 +1,6 @@
 import {serviceHelper} from "@/service/helper";
 import {
-  IReqCreateEventConfig, IReqEventDataTrendData,
+  IReqCreateEventConfig, IReqEventDataCountData, IReqEventDataTrendData,
   IReqFetchEventConfigByPage,
   IReqId, IReqUpdateEventConfig,
   IResEventConfig,
@@ -10,6 +10,11 @@ import {
 export * from './types'
 
 export const eventConfigService = {
+
+  fetchEventDataCount: serviceHelper.define<any, IReqEventDataCountData>({
+    url:'/eventDataTimeAggregation/count',
+    method: 'get'
+  }),
 
   fetchEventDataTrendData: serviceHelper.define<any, IReqEventDataTrendData>({
     url:'/eventDataTimeAggregation/trend',
