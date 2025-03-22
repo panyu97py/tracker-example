@@ -11,11 +11,12 @@ export const Chart: React.FC<ChartProps> = (props) => {
   const config: LineConfig = useMemo(() => {
     return {
       data: data ?? [],
-      xField: 'date',
-      yField: 'data',
-      seriesField: 'name',
+      xField: "time",
+      yField: "value",
+      seriesField: "category",
       legend: {position: 'top'},
-      smooth: true,
+      colorField: 'category',
+      style: {shape: 'smooth'},
       animation: {appear: {animation: 'path-in', duration: 2000}},
     };
   }, [data]);
