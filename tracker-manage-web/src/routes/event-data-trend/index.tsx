@@ -36,6 +36,7 @@ export const EventDataTrend = () => {
 
   const fetchCountData = async () => {
     const res = await eventConfigService.fetchEventDataCount({ eventId });
+    if (!res) return
     setCountData(res);
   };
 
